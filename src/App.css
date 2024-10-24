@@ -1,42 +1,67 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  margin: 0px;
+  padding: 0px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  background-image: url(./assets/pokeball-seamless-pattern.jpg);
+  background-size: auto;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.App {
+  background-color: white;
+  border: 2px solid black;
+  min-height: 600px;
+  margin: 40px;
 }
 
-.card {
-  padding: 2em;
+.score {
+  margin: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+.score > h1 {
+  margin-bottom: 10px;
+}
+
+.cards-board {
+  display: flex;
+  padding: 20px 40px;
+  margin-top: 60px;
+  gap: 20px;
+}
+
+.card-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 8px 4px gray;
+  min-height: 300px;
+}
+
+img {
+  max-width: 75%;
+}
+
+/* Footer support */
+.footer {
+  margin-top: auto;
+  background-color: white;
+}
+
+.footer-content {
+  display: flex;
+  gap: 10px;
+  font-size: 1rem;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }

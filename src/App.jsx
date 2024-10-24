@@ -69,11 +69,16 @@ function App() {
     }
   }
 
+  const year = new Date().getFullYear();
+
   return (
     <>
       <div className="App">
-        <h1>Score: {score}</h1>
-        <h2>Best score: {bestScore}</h2>
+        <div className='score'>
+          <h1>Score: {score}</h1>
+          <h2>Best score: {bestScore}</h2>
+        </div>
+      
 
         <div onClick={(e) => handleClick(e)} className="cards-board">
           {pokeList.map((pokemon) => (
@@ -81,6 +86,15 @@ function App() {
           ))}
         </div>
       </div>
+      <footer class="footer">
+            <div class="footer-content">
+                Copyright © Jayyzzeezzy
+                <a href="https://github.com/jayyzzeezzy" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                {year}
+            </div>
+        </footer>
     </>
   )
 }
