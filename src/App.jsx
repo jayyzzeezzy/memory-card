@@ -34,7 +34,20 @@ function App() {
   const [bestScore, setBestScore] = useState(0);
   const [chosenList, setChosenList] = useState([]);
 
-  
+  function handleClick(e) {
+    const newList = shuffleList(pokeList);
+    setPokeList(newList);
+
+    // get image id
+    const selected = e.target.id;
+    console.log(selected);
+
+    // add pokemon to the chosenList
+    setChosenList([...chosenList, selected]);
+    console.log(chosenList);
+
+    runGame(selected);
+  }
 
   return (
     <>
