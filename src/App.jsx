@@ -49,6 +49,26 @@ function App() {
     runGame(selected);
   }
 
+  function runGame(selected) {
+    // lose condition
+    if (chosenList.some((element) => element == selected)) {
+      setChosenList([]);
+      setScore(0);
+
+      if (score > bestScore) {
+        setBestScore(score);
+      }
+
+      // win condition
+    } else if (score == sample.length - 1) {
+      setChosenList([]);
+      setBestScore(score + 1);
+      setScore(0);
+    } else {
+      setScore(score + 1);
+    }
+  }
+
   return (
     <>
       <div className="App">
