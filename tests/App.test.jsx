@@ -1,15 +1,25 @@
-import { render, screen } from '@testing-library/react';
+// App.test.jsx
 
-import App from '../src/App';
+import { describe, it, expect } from "vitest";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import App from "./Test";
 
-// eslint-disable-next-line no-undef
-describe('App', () => {
-  // eslint-disable-next-line no-undef
-  it('renders headline', () => {
-    render(<App title="React" />);
+describe("App component", () => {
+  it("renders magnificent monkeys", () => {
+    // since screen does not have the container property, we'll destructure render to obtain a container for this test
+    const { container } = render(<App />);
+    expect(container).toMatchSnapshot();
+  });
 
-    screen.debug();
+  it("renders radical rhinos after button click", async () => {
+    const user = userEvent.setup();
 
-    // check if App components renders headline
+    render(<App />);
+    const button = screen.getByRole("button", { name: "Click Me" });
+
+    await user.click(button);
+
+    expect(screen.getByRole("heading").textContent).toMatch(/radical rhinos/i);
   });
 });
